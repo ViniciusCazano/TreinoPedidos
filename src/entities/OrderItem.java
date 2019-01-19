@@ -1,10 +1,19 @@
 package entities;
 
 public class OrderItem {
+	private String id;
 	private Integer quantity;
 	private Double price;
 	
 	private Product prod = new Product();
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 	
 	public Integer getQuantity() {
 		return quantity;
@@ -22,11 +31,20 @@ public class OrderItem {
 		this.price = price;
 	}
 
-	public Product getProd() {
-		return prod;
+	public void setProd(Product prod) {
+		this.prod=prod;
 	}
 
 	public Double subTotal() {
 		return quantity*price;
+	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(prod.getName()+", ");
+		sb.append(prod.getPrice()+", ");
+		sb.append("Quantity: "+getQuantity());
+		sb.append(", Subtotal:"+subTotal());
+		return sb.toString();
 	}
 }
