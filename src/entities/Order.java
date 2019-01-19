@@ -14,6 +14,10 @@ public class Order {
 	
 	private List <OrderItem> orderProducts = new ArrayList<>();
 
+	public Order() {
+		setMoment();
+	}
+	
 	public String getId() {
 		return id;
 	}
@@ -39,13 +43,12 @@ public class Order {
 		this.status = OrderStatus.valueOf(status);
 	}
 
-	public String getOrderProducts(String Search) {
+	public OrderItem getOrderProducts(String Search) {
 		int aux = orderProducts.indexOf(Search);
-		if(aux>=0) return orderProducts.get(aux).toString();
-		else return "Item nao encontrado";
+		return orderProducts.get(aux);
 	}
 
-	public void setOrderProducts(OrderItem orderProducts) {
+	public void addOrderProducts(OrderItem orderProducts) {
 		this.orderProducts.add(orderProducts);
 	}
 	

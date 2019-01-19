@@ -50,7 +50,9 @@ public class Clients {
 
 	@Override
 	public String toString() {
-		return "Clients [name=" + name + ", email=" + email + ", birthDate=" + birthDate + "]";
+		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
+		String data=sdf1.format(birthDate);
+		return "Clients [name=" + name + ", email=" + email + ", birthDate=" + data + "]";
 	}
 	
 }
