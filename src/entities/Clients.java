@@ -14,7 +14,7 @@ public class Clients {
 	private List<Order> requests = new ArrayList<>();
 	
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(String name) {
@@ -40,8 +40,15 @@ public class Clients {
 	}
 	
 	public Order getReqauest(String search) {
-		int enumSearch=requests.indexOf(search);
-		return requests.get(enumSearch);
+		int enumRequest=0;
+		int cont=0;
+		for(Order obj : requests) {
+			if(obj.getId().equals(search)) {
+				enumRequest=cont;
+			}
+			cont++;
+		}
+		return requests.get(enumRequest);
 	}
 	
 	public void addRequests(Order order) {

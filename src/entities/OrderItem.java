@@ -41,6 +41,7 @@ public class OrderItem {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
+		sb.append("("+this.getId()+"), ");
 		sb.append(prod.getName()+", ");
 		sb.append(prod.getPrice()+", ");
 		sb.append("Quantity: "+getQuantity());

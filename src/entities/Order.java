@@ -43,9 +43,16 @@ public class Order {
 		this.status = OrderStatus.valueOf(status);
 	}
 
-	public OrderItem getOrderProducts(String Search) {
-		int aux = orderProducts.indexOf(Search);
-		return orderProducts.get(aux);
+	public OrderItem getOrderProducts(String search) {
+		int enumOrderProducts=0;
+		int cont=0;
+		for(OrderItem obj : orderProducts) {
+			if(obj.getId().equals(search)) {
+				enumOrderProducts=cont;
+			}
+			cont++;
+		}
+		return orderProducts.get(enumOrderProducts);
 	}
 
 	public void addOrderProducts(OrderItem orderProducts) {

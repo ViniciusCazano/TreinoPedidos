@@ -35,10 +35,11 @@ public class Program {
 					break;
 				case 1:
 					System.out.println("Digite o nome: "); String name = sc.nextLine();
-					int enumClient=0;
+					int enumClient=-1;
 					int cont=0;
 					for (Clients obj : client) {
-						if(obj.getName()==name) {
+						String auxName=obj.getName();
+						if(auxName.equals(name)) {
 							enumClient=cont;
 						}
 						cont++;
@@ -87,8 +88,7 @@ public class Program {
 							case 2:
 								System.out.println("Enter id order: "); String search= sc.nextLine();
 								client.get(enumClient).getReqauest(search).toString();
-						}
-						
+						}		
 					}
 					else {
 						System.out.println("Cliente nao encontrado");
